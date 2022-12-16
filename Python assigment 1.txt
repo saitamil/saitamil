@@ -1,0 +1,264 @@
+#string functions
+
+#swapecase() method returns a string where all the upper case letters are lower case and vice versa.
+mytext= "I Like Choclate"
+a = mytext.swapcase() # Make the lower case letters upper case and the upper case letters lower case.
+print(a)
+
+#translate()  method returns a string where some specified characters are replaced with the character described in a dictionary, or in a mapping table.
+
+mydict = {80: 83 }  #use a dictionary with ascii codes to replace 80 (P) with 83 (S)
+mytxt = "Hello Pam!"
+print(mytxt.translate(mydict))
+
+mytxt = "Good night!"
+mydict = {111: None, 111: None ,103: None, 104: None,116: 56 }
+print(mytxt.translate(mydict))
+
+
+#ljust()  method will left align the string, using a specified character (space is default) as the fill character.
+mytext="Blue"
+a = mytext.ljust(5)
+print(a,"is my fav colour")
+
+mytxt = "Blue"
+a = mytxt.ljust(5, "O")
+print(a,"is my fav colour")
+
+
+#STRING FUNCTIONS:
+          #1.zfill()
+          #2.startswith()
+          #3.rpartition()
+
+
+#Zfill():
+#used to generate the width of the given value, which u give as parameter
+#Can we see an ex for clearly understanding:
+x="Hello"
+J=x.zfill(10)  #at 10th position hello get placed
+print(J)
+
+
+#startswith():
+#Startswith() method is used to check whether the given string is starting with the value which is given as parameter; if the value presents 1st,it gives true otherwise false.
+#Can we understand by ex:
+v="Gud morning,hi"
+y=v.startswith("Gud") #it checks whether the “Gud” is the starting
+print(y)
+
+
+#rpartition(): 
+#rpartition()method is used to whether the given value inside rpartition(), is present in given string,it gives before the value,the value,after the value.
+#If the value is not present in string,it gives 2 empty string and full string as 3rd.
+#Can we understand by example:
+
+
+txt="I wished to eat mango,mango is my favourite"
+a=txt.rpartition("mango")
+print(a)
+
+
+#python string function
+#format_map() method is an inbuilt function in python,which is used to return a dictionary keys value.
+
+
+#example
+a={'x':'jacky','y':'jackson'}
+print("{x}'s last name is {y}".format_map(a))
+
+
+#isidentifier() method returns true if the string is considered a valid identifier if it only contains alphanumeric letter(a-z)& (0-9) or underscore.A valid identifier cannot start with a numeric or contain any space
+
+
+a="MyFolder"
+b="2bring"
+c="Demo002"
+d="my demo"
+print(a.isidentifier())
+print(b.isidentifier())
+print(c.isidentifier())
+print(d.isidentifier())
+
+
+#join() method takes all items in an iterable and join them into one string.A string must be specified as the separator
+
+mytuple=("jacky","preethi","nanda")
+x="#".join(mytuple)
+print(x)
+
+#List functions
+
+#index() 
+#method returns the position at the first occurrence of the specified value.
+Chocolate_list =['Dairy milk' ,'kik kat','Milkybar']
+a = Chocolate_list.index("kik kat")
+print(a)
+
+
+#remove()
+#method removes the first occurrence of the element with the specified value.
+Chocolate_list =['Dairy milk' ,'kik kat','Milkybar','kik kat']
+Chocolate_list.remove("kik kat")
+print(Chocolate_list)
+
+
+#insert()
+# method inserts the specified value at the specified position.
+colour_list=['Blue','Black','Red']
+colour_list.insert(1,"Violet")
+print(colour_list)
+
+#list functions:  
+  #1.Reverse()   
+#2.extend()
+#3.clear()
+#Used to extend the list from one list to another
+#for ex:
+phone=["Redmi","Vivo","Real_me","oppo"]
+#creating another list :
+dress=["shirt","pant","chudi","saree"]
+#connect these two list by Extend() method:
+phone.extend(dress)
+print(phone)
+
+#reverse()
+#reverse() method is used to sort the list in descending order.
+#Can we see a ex to understand well:
+ice=["vanilla","chocolate","strawberry","coffee","nuts"]
+#if u want to get them in descending order use reverse method:
+ice.sort(reverse=True)
+print(ice)
+#u can see all are in descending 
+
+#append():
+#append() method is used to join the value into the list
+#first create a list:
+list=[2,3,4,9,67]
+print(list)
+#If u want to add another value to the list use append method:
+list.append(80)
+print(list)
+
+#clear()
+p=[1,8,9,4]
+p.clear()
+print(p)
+
+#pop() in python is a pre-defined,in built function that removes an item at the specified index from the list.You also use pop in python without mentioning the index value.In such cases,the pop()function will remove the last element of the list.
+
+prime_no=[2,3,5,7]
+remove_ele=prime_no.pop()
+print(prime_no)
+remove_ele1=prime_no.pop(1)
+print(prime_no)
+
+#count() method returns the no. of times the specified element appears in list.
+
+nos=[2,3,5,2,11,2,7]
+count=nos.count(2)
+print(count)
+vowels=['a','e','i','o','i','u']
+count=vowels.count('i')
+print(count)
+count=vowels.count('p')
+print(count)
+
+#extend() method adds all the element of an iterable (list,tuple,string etc) to the end of the list.
+
+prime_nos=[2,3,5]
+no=[1,4]
+no.extend(prime_nos)
+print(no)
+
+#set functions
+
+#difference()
+#method returns a set that contains the difference between two sets.
+#The returned set contains items that exist only in the first set, and not in both sets.
+a = {"apple","banana","grapes"}
+b = {"cherry ","plum","Mango"}
+c = {"apple","strawberry","cherry"}
+z = a.difference(b,c) 
+print(z)
+
+#isdisjoint()
+#method returns True if none of the items are present in both sets, otherwise it returns False.
+
+mytext1={"apple","banana","grapes"}
+mytext2={"cherry ","plum","Mango"}
+a = mytext1.isdisjoint(mytext2)
+print(a)
+
+mytext1={"apple","banana","grapes"}
+mytext2={"apple","strawberry","cherry"}
+a = mytext1.isdisjoint(mytext2)
+print(a)
+
+#update
+#method updates the current set, by adding items from another set (or any other iterable).
+#If an item is present in both sets, only one appearance of this item will be present in the updated set.
+a={"apple","banana","plum"}
+b={"cherry ","plum","apple"}
+a.update(b)
+print(a)
+
+
+#set methods:
+#1.Issuperset()
+#2.copy()
+#3.intersection()
+#issuperset():
+#Issuperset() method is used to check the whether the all the value which is present in one list should present in other list ,if presents it give true otherwise false
+#For Ex:
+set1={"apple","Guava","banana","Grapes"}
+#create another list to check:
+set2={"lemon","Grapes"}  #(set2={“lemon”,”apple”},it gives false,becoz 1 value differs)
+i=set1.issuperset(set2) #it checks whether the values are present in set1 only present in set2,no other values or not,if one differs also it gives false.
+print(i)
+
+#copy()
+x={"pine","straw"}
+p=x.copy()
+print(p)
+
+#intersection
+l={8,0,3,5}
+c={0,5,6,7}
+z=l.intersection(c)
+print(z)
+
+#symmetric_difference() method return a set that contains all items from both set,but not the item that are present in both sets.
+
+A={'python','java','go'}
+B={'python','javascript','c'}
+result=A.symmetric_difference(B)
+print(result)
+
+#the symmetric_difference_update() method finds the symmetric difference of two sets (non-similar items of both set) and update to the set that calls method.
+
+A={'red','green','blue'}
+B={'yellow','red','orange'}
+result=A.symmetric_difference(B)
+print(result)
+
+#issubset() method returns True if all items in the set exists in the specified set,otherwise it returns False.
+
+x={"a","b","c"}
+y={"f","e","d","c","b"}
+z=x.issubset(y)
+print(z)
+
+# python tuple functions
+##count() method returns the no. of times the specified values appears in tuple.
+
+thistuple=(1,3,7,8,7,5,4,6,8,5)
+x=thistuple.count(3)
+print(x)
+
+#the index() method returns the index of the specified element in tuple.
+
+a=(1,2,3,4,5,6)
+index=a.index(4)
+print(index)
+
